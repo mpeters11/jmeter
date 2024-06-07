@@ -19,11 +19,19 @@ import com.github.vlsi.gradle.properties.dsl.lastEditYear
 import com.github.vlsi.gradle.release.RepositoryType
 import org.ajoberstar.grgit.Grgit
 
+
 plugins {
     id("build-logic.root-build")
     id("com.github.vlsi.stage-vote-release")
+    id "org.sonarqube" version "4.4.1.3373"
 }
-
+sonar {
+  properties {
+    property "sonar.projectKey", "mpeters11_apachejmeter"
+    property "sonar.organization", "mpeters11"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
 fun Project.boolProp(name: String) =
     findProperty(name)
         // Project properties include tasks, extensions, etc, and we want only String properties
