@@ -24,9 +24,12 @@ plugins {
     id("build-logic.root-build")
     id("com.github.vlsi.stage-vote-release")
     id "org.sonarqube" version "4.4.1.3373"
+    id("org.sonarqube") version "5.0.0.4638"
 }
 sonar {
   properties {
+    property("sonar.projectKey", "ApacheJmeter")
+    property("sonar.projectName", "ApacheJmeter")
     property "sonar.projectKey", "mpeters11_apachejmeter"
     property "sonar.organization", "mpeters11"
     property "sonar.host.url", "https://sonarcloud.io"
